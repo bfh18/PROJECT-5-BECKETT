@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Water Drop Game</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Water Drop Game</title>
+  <!-- Import a web-safe font similar to Avenir -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-    <div class="game-wrapper">
-        <img src="img/cw_logo-horizontal.png" alt="charity: water logo" class="logo">
-        <h1 class="game-title">Water Drop</h1>
-        <p class="game-tagline">Catch the good drops, avoid the bad ones!</p>
+  <div class="game-wrapper">
+    <img src="img/cw_logo-horizontal.png" alt="charity: water logo" class="logo">
 
-        <div class="score-panel">
-            <div class="score">Score: <span id="score">0</span></div>
-            <div class="timer">Time: <span id="time">30</span>s</div>
-            <button id="start-btn">Start Game</button>
-            <button id="reset-btn" style="background-color: #FFC907; color: black;">Reset</button>
-        </div>
+    <h1 class="game-title">Water Drop</h1>
+    <p class="game-tagline">Catch the good drops, avoid the bad ones!</p>
 
-        <div id="game-container"></div>
+    <!-- Difficulty selector -->
+    <div class="difficulty-panel">
+      <label>
+        <input type="radio" name="difficulty" value="easy" checked>
+        Easy
+      </label>
+      <label>
+        <input type="radio" name="difficulty" value="normal">
+        Normal
+      </label>
+      <label>
+        <input type="radio" name="difficulty" value="hard">
+        Hard
+      </label>
     </div>
 
-    <script src="script.js"></script>
+    <div class="score-panel">
+      <div class="score">Score: <span id="score">0</span></div>
+      <div class="timer">Time: <span id="time">30</span>s</div>
+      <button id="start-btn">Start Game</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+
+    <div id="game-container"></div>
+    <div id="message-container"></div>
+
+    <footer class="site-footer">
+      <p>
+        Learn more or donate at
+        <a href="https://www.charitywater.org" target="_blank">charity: water</a> |
+        <a href="https://www.charitywater.org/donate" target="_blank">Donate now</a>
+      </p>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+</html>

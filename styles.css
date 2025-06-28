@@ -1,159 +1,173 @@
-/* charity: water Brand Style */
-
 :root {
-    --yellow: #FFC907;
-    --blue: #2E9DF7;
-    --light-blue: #8BD1CB;
-    --green: #4FCB53;
-    --red: #F5402C;
-    --font: 'Avenir', 'Helvetica', sans-serif;
+  --yellow: #FFC907;
+  --blue: #2E9DF7;
+  --light-blue: #8BD1CB;
+  --green: #4FCB53;
+  --red: #F5402C;
+  --font: 'Montserrat', sans-serif;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: var(--font);
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  font-family: var(--font);
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .game-wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.logo {
+  height: 60px;
 }
 
 .game-title {
-    color: #222;
-    font-size: 48px;
-    margin: 0;
-    text-align: center;
+  color: #222;
+  font-size: 48px;
+  text-align: center;
 }
 
 .game-tagline {
-    color: #555;
-    font-size: 18px;
-    margin-bottom: 20px;
-    text-align: center;
+  color: #555;
+  font-size: 18px;
+  text-align: center;
+}
+
+/* Difficulty */
+.difficulty-panel {
+  display: flex;
+  gap: 10px;
+}
+.difficulty-panel label {
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+}
+.difficulty-panel input {
+  margin-right: 4px;
 }
 
 .score-panel {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 800px;
-    max-width: 95vw;
-    padding: 10px 20px;
-    background-color: white;
-    border: 2px solid var(--blue);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 800px;
+  max-width: 95vw;
+  padding: 10px 20px;
+  background: white;
+  border: 2px solid var(--blue);
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .score, .timer {
-    font-size: 22px;
-    font-weight: bold;
-    color: #222;
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
 }
 
 #game-container {
-    width: 800px;
-    max-width: 95vw;
-    height: 600px;
-    background-color: #e6f7ff;
-    border: 2px solid var(--blue);
-    border-radius: 12px;
-    position: relative;
-    overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  width: 800px;
+  max-width: 95vw;
+  height: 600px;
+  background: #e6f7ff;
+  border: 2px solid var(--blue);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
 #start-btn, #reset-btn {
-    padding: 10px 20px;
-    border: none;
-    border-radius: 6px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: all 0.2s ease;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.2s ease;
 }
-
 #start-btn {
-    background-color: var(--green);
-    color: white;
+  background: var(--green);
+  color: white;
 }
 #start-btn:hover {
-    background-color: #37b143;
+  background: #37b143;
 }
-
 #reset-btn {
-    background-color: var(--yellow);
-    color: black;
+  background: var(--yellow);
+  color: black;
 }
 #reset-btn:hover {
-    background-color: #e0b306;
+  background: #e0b306;
 }
 
 .water-drop {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    background-color: var(--blue);
-    border-radius: 50%;
-    animation: dropFall linear forwards;
-    transform-origin: center;
-    cursor: pointer;
-    padding: 15px;
-    margin: -15px;
-    transition: transform 0.1s ease;
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: var(--blue);
+  border-radius: 50%;
+  animation: dropFall linear forwards;
+  transform-origin: center;
+  cursor: pointer;
+  padding: 15px;
+  margin: -15px;
+  transition: transform 0.1s ease;
 }
 .water-drop:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .bad-drop {
-    background-color: var(--red);
+  background: var(--red);
 }
 
 @keyframes dropFall {
-    from {
-        transform: translateY(-20px);
-    }
-    to {
-        transform: translateY(600px);
-    }
+  from { transform: translateY(-20px); }
+  to   { transform: translateY(600px); }
 }
 
 #message-container {
-    font-size: 24px;
-    color: var(--blue);
-    margin-top: 20px;
-    text-align: center;
-    font-weight: bold;
+  font-size: 24px;
+  color: var(--blue);
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
 }
 
-@keyframes fall {
-    to {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
+.site-footer {
+  margin-top: 30px;
+  font-size: 14px;
+  color: #555;
+}
+.site-footer a {
+  color: var(--blue);
+  text-decoration: none;
+}
+.site-footer a:hover {
+  text-decoration: underline;
 }
 
 @media (max-width: 850px) {
-    .score-panel, #game-container {
-        width: 95vw;
-    }
-    #game-container {
-        height: 70vh;
-    }
+  .score-panel, #game-container {
+    width: 95vw;
+  }
+  #game-container {
+    height: 70vh;
+  }
 }
